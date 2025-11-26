@@ -1,0 +1,81 @@
+<div class="px-4 pb-4">
+  <div class="px-5">
+    <!-- Title -->
+    <legend class="display-6 mb-3 text-center">
+      Get in Touch
+    </legend>
+    <legend class="card-subtitle text-center mb-4">
+      Your Bike Deserves Expert Hands.
+    </legend>
+    <!-- Form -->
+    <form class="card p-4 pt-2" id="contactForm">
+      <div class="card-body px-3">
+        <div class="row">
+          <!-- Name -->
+          <div class="col-auto mb-3">
+            <label for="name" class="form-label fw-bold">Name</label>
+            <input type="text" class="form-control" name="name" id="name" placeholder="Your name" required>
+          </div>
+          <!-- Email -->
+          <div class="col-auto mb-3">
+            <label for="Email" class="form-label fw-semibold">Email</label>
+            <input type="email" class="form-control" name="email" id="Email" aria-describedby="EmailHelp" required>
+            <!-- Email Help-text -->
+            <div id="EmailHelp" class="form-text">
+              <!-- E.g., Yamaha FZ-S, Honda CB500X, etc. -->
+            </div>
+          </div>
+          <!-- Cellphone -->
+          <div class="col-auto mb-3">
+            <label class="form-label fw-semibold" for="phone">
+              Phone No. <span class="text-body-secondary small">(Optional)</span>
+            </label>
+            <input type="text"
+              class="form-control" 
+              id="phone" 
+              name="phone" 
+              placeholder="083 123 4567" 
+              aria-describedby="CellphoneHelp"
+            >
+            <!-- Cellphone Help-text -->
+            <div id="CellphoneHelp" class="form-text">
+              <!-- E.g., General Service, Repair, Customization, etc. -->
+            </div>
+          </div>
+          <!-- Subject -->
+          <div class="col-auto mb-3">
+            <label for="subject" class="form-label fw-semibold">Subject</label>
+            <input type="text" class="form-control" name="subject" id="subject" 
+              placeholder="Subject of your message"
+            >
+          </div>
+        </div>
+        <!-- Form Message -->
+        <div class="form-text mb-3 text-info text-center" role="alert">
+          <strong>We'll never share your personal details with anyone else.</strong>
+        </div>
+        <hr class="mb-4">
+        <!-- Message -->
+        <div class="mb-3">
+          <label for="message" class="form-label fw-semibold">Message</label>
+          <textarea class="form-control" 
+            id="message" 
+            name="message" 
+            placeholder="Tell us how we can help" 
+            required
+            rows="4" 
+          ></textarea>
+          <!-- Message Help-text -->
+          <div id="messageHelp" class="form-text">
+            Provide any additional details or specific requests here.
+          </div>
+        </div>
+        <hr class="mb-4">
+        <!--[ Submit Button ]-->
+        <p class="">
+          <input class="btn btn-success fw-bold mt-1 w-100" type="submit" value="Send Message">
+        </p>
+      </div>
+    </form>
+  </div>
+</div>

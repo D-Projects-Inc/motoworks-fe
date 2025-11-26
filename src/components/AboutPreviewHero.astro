@@ -1,0 +1,40 @@
+---
+import { BRAND_NAME } from "../consts";
+import { Image } from "astro:assets";
+import previewImage from "../assets/images/bikes/ducati.webp"; //2023Kawasaki-ZX-4RR.jpg";
+---
+<div class="row flex-lg-row-reverse align-items-center g-3">
+  <!--[ Imagery ] #TODO: Use Photo of Mechanic/Shop -->
+  <div class="col-10 col-sm-8 col-lg-6">
+    <Image src={previewImage} fetchpriority="high" loading={"eager"} 
+      class="d-block mx-lg-auto img-fluid" 
+      alt="Ducati Image" width="700" height="500"
+    /> 
+  </div>
+  <!--[ Intro x CTA ]-->
+  <div class="col-lg-6">
+    <!-- Title -->
+    <h1 class="display-5 fw-light text-body-emphasis lh-1 mb-3">
+      <span class="fw-bold small text-body-secondary">
+        <small>A bit</small>
+      </span>
+      About {BRAND_NAME}
+    </h1>
+    <!--Subtitle  -->
+    <legend class="fs-5 mb-4 text-muted">
+      A Mechanic Who Rides Too
+    </legend>
+    <!-- Text -->
+    <p class="lead">
+      At MotoFix Garage, we know what your bike means to you. With over 10 years` experience in 
+      motorcycle maintenance and performance tuning, we combine passion with precision - 
+      Every Repair, Every Time.
+    </p>
+
+    <div class="d-grid gap-2 d-md-flex justify-content-md-start"> 
+      <a href="/about/#team" class="btn btn-primary btn-lg px-4">
+        Meet Your Mechanic
+      </a>
+    </div> 
+  </div>
+</div>

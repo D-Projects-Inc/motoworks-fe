@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+import Layout from '../layouts/Layout.astro';
+
+// Components
+import AOSInit from "../components/InitAOS";
+import AboutPreview from '../components/AboutPreviewHero.astro';
+import ContactBanner from "../components/ContactBanner.astro";
+import GalleryTeaser from "../components/GalleryTeaser.astro";
+import HeroSection from "../components/HomeHeroSection.astro"
+import ServicesPreview from '../components/ServicesPreview.astro';
+---
+<Layout>
+  <AOSInit client:idle />
+  <!--[ 1. Hero Section ]-->
+  <HeroSection />
+  <center><hr class="w-75"></center>
+  <!--[ 2. Quick Services ]-->
+  <section id="quick-services" class="py-5">
+    <ServicesPreview />
+  </section>
+  <center><hr class="w-75"></center>
+  <!--[ 3. About Preview ]-->
+  <section class="container col-xxl-10 px-4 py-5" id="about-preview" data-aos="fade-in">
+    <AboutPreview />
+  </section>
+  <center><hr class="w-75"></center>
+  <!--[ 4. Gallery Teaser ]-->
+  <GalleryTeaser />
+  <center><hr class="w-75"></center>
+  <!--[ 5. Contact Banner ]-->
+  <ContactBanner />
+</Layout>

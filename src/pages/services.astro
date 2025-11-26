@@ -1,0 +1,300 @@
+---
+import "../styles/global.css";
+import Layout from '../layouts/Layout.astro';
+import { Icon } from 'astro-icon/components';
+import { BRAND_NAME } from '../consts';
+
+// Components
+import AOSInit from "../components/InitAOS";
+import ServiceCard from "../components/cards/ServiceCard.astro";
+import ServiceOfferCard from "../components/ServiceOfferCard.astro";
+// Services Data
+const services = [
+  // MOTORCYCLES
+  {
+    icon: "ph:wrench-duotone",
+    title: "Full Motorcycle Service",
+    description: "Engine, brakes, chain, filters, and full safety inspection for peak performance.",
+  },
+  {
+    icon: "mdi:oil",
+    title: "Oil & Filter Change",
+    description: "Quick oil change using quality 4-stroke oils for smoother, cooler engine operation.",
+  },
+  {
+    icon: "mdi:car-brake-fluid-level",
+    title: "Brake System Care",
+    description: "Pads, discs, brake fluid bleeding and full braking performance check.",
+  },
+  {
+    icon: "mdi:link-variant",
+    title: "Chain & Sprocket Service",
+    description: "Cleaning, lubrication, tensioning and replacement of worn drive components.",
+  },
+  {
+    icon: "mdi:tire",
+    title: "Tyre Fitment & Balancing",
+    description: "Tyre replacement, puncture repairs, pressure checks, and wheel balancing.",
+  },
+  {
+    icon: "mdi:car-battery",
+    title: "Battery & Electrical Diagnostics",
+    description: "Starter issues, lighting failures and charging faults diagnosed and repaired.",
+  },
+  {
+    icon: "mdi:hydraulic-oil-level",
+    title: "Suspension & Fork Repairs",
+    description: "Fork seal replacement, shock tuning and suspension health checks.",
+  },
+  {
+    icon: "mdi:speedometer",
+    title: "Engine Tuning & Performance Upgrades",
+    description: "Carb tuning, EFI optimisation and performance part installation.",
+  },
+  {
+    icon: "mdi:spray",
+    title: "Customisation & Detailing",
+    description: "Decals, detailing, colour refresh and accessory fitment.",
+  },
+  // GENERATORS
+  {
+    icon: "mdi:engine",
+    title: "Generator Full Service",
+    description: "Oil, spark plugs, carb cleaning, filter replacement and load performance checks for reliable power.",
+  },
+  {
+    icon: "mdi:truck-delivery",
+    title: "Pickup & Drop-Off Service",
+    description: "Convenient collection and return of your motorcycle or generator for easy servicing.",
+  },
+  {
+    icon: "mdi:flash",
+    title: "Load Testing & Voltage Check",
+    description: "Verifies generator voltage output and stability under real operating load.",
+  },
+  {
+    icon: "mdi:fuel",
+    title: "Fuel System & Carburetor Cleaning",
+    description: "Removes varnish, dirt and stale fuel residue for easy starting and smooth running.",
+  },
+  {
+    icon: "mdi:transmission-tower",
+    title: "Electrical Repairs & Rewiring",
+    description: "Control panels, alternator faults, wiring repairs and voltage regulator issues.",
+  },
+  {
+    icon: "mdi:home-lightning-bolt",
+    title: "Home & Business Installation",
+    description: "Safe generator placement, wiring setups and changeover switch installation.",
+  },
+  // SMALL ENGINE TOOLS
+  {
+    icon: "mdi:grass",
+    title: "Lawnmower & Brushcutter Service",
+    description: "Blade sharpening, oil service, cable repairs, carb cleaning and tune-ups.",
+  },
+  {
+    icon: "mdi:water-pump",
+    title: "Pressure Washer & Water Pump Repair",
+    description: "Hose repairs, pressure diagnostics and small engine tune-ups.",
+  },
+  {
+    icon: "mdi:axe",
+    title: "Chainsaw Overhaul & Sharpening",
+    description: "Chain sharpening, bar alignment, lubrication system repair & tuning.",
+  },
+  // SAFETY & INSPECTION
+  {
+    icon: "mdi:shield-check-outline",
+    title: "Pre-Ride Motorcycle Safety Inspection",
+    description: "Checks tyres, brakes, lights, chain, suspension and overall safety.",
+  },
+  {
+    icon: "mdi:alert-decagram-outline",
+    title: "Generator Safety & Compliance Check",
+    description: "Grounding, wiring, ventilation and load safety certification.",
+  },
+  // MOBILE SERVICES
+  {
+    icon: "mdi:tools",
+    title: "Mobile On-Site Repairs",
+    description: "We come to your home or workplace for quick, minor fixes and diagnostics.",
+  },
+  {
+    icon: "mdi:tow-truck",
+    title: "Breakdown Support & Towing Assist",
+    description: "Safe transport and recovery for non-running motorcycles.",
+  },
+  // TRAINING & CONSULTATION
+  {
+    icon: "mdi:school",
+    title: "Owner Training & Basics",
+    description: "Learn essential motorcycle or generator care for daily reliability.",
+  },
+  {
+    icon: "mdi:lightbulb-on-outline",
+    title: "Performance & Upgrade Consultation",
+    description: "Expert guidance on oils, parts, accessories and performance enhancements.",
+  },
+
+// {
+//   icon: "mdi:calendar-cog",
+//   title: "Preventative Maintenance Scheduling",
+//   description: "We track your service intervals and send reminders so your machine always stays in top condition.",
+// },
+];
+---
+<Layout>
+  <AOSInit client:idle />
+  <!--[ 1. Hero Section ]-->
+  <section class="text-center mb-3 mt-5 px-4 py-4" data-aos="zoom-in">
+	  <div class="py-3 container-md">
+      <!--[ Logo ]-->
+      <img class="d-block mx-auto mb-4" 
+        src="/motoWorks.png" alt={BRAND_NAME+" logo"} width="130" height="130">
+      <!--[ Headline ]-->
+      <h1 class="display-5 fw-bold text-body-emphasis"
+      >Our Offerings: Comprehensive Motorcycle Care</h1>
+      <!--[ Subheadline ]-->
+      <div class="px-5">
+        <h2 class="fw-light mb-1"
+        ><em>From basic maintenance to complex rebuilds - our workshop handles it all.</em></h2>
+      </div>
+    </div>
+  </section>
+  <center><hr class="w-75"></center>
+  <!--[ 2. Services ]-->
+  <section id="quick-services" class="py-4">
+    <!--[ Section Header ]-->
+    <div class="text-center mb-5">
+      <h2 class="fw-bold display-6">What We Do Best!</h2>
+      <p class="text-secondary lead">Professional development & data solutions for growing businesses.</p>
+    </div>
+    
+    <div class="row g-2">
+      <!-- Services -->
+      <div class="col-md-8">
+        <!--[ Services Grid ]-->
+        <div class="row g-2 row-cols-1 row-cols-sm-2 row-cols-lg-3" data-aos="fade-up" data-aos-delay="500">
+          {services.map((sv) => (
+            <ServiceCard
+              icon={sv.icon}
+              title={sv.title}
+              description={sv.description}
+            />
+          ))}
+        </div>
+      </div>
+      <!--[ Sidebar: #TODO: Incl.: FAQ &/ Contact CTA. -->
+      <div class="col-md-4">
+        <div class="position-sticky" style="top: 2rem;">
+          <!-- About -->
+          <div class="p-4 mb-3 bg-body-tertiary rounded">
+            <h4 class="fst-italic">About</h4>
+            <p class="mb-0">Customize this section to tell your visitors a little bit about your publication, writers, content, or something else entirely. Totally up to you.</p>
+          </div>
+          <!-- Recent posts -->
+          <div>
+            <h4 class="fst-italic">Recent posts</h4>
+            <ul class="list-unstyled">
+            <li>
+            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+            <svg aria-hidden="true" class="bd-placeholder-img " height="96" preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100%" height="100%" fill="#777">
+            </rect>
+            </svg>
+            <div class="col-lg-8">
+            <h6 class="mb-0">Example blog post title</h6>
+            <small class="text-body-secondary">January 15, 2024</small>
+            </div>
+            </a>
+            </li>
+            <li>
+            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+            <svg aria-hidden="true" class="bd-placeholder-img " height="96" preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100%" height="100%" fill="#777">
+            </rect>
+            </svg>
+            <div class="col-lg-8">
+            <h6 class="mb-0">This is another blog post title</h6>
+            <small class="text-body-secondary">January 14, 2024</small>
+            </div>
+            </a>
+            </li>
+            <li>
+            <a class="d-flex flex-column flex-lg-row gap-3 align-items-start align-items-lg-center py-3 link-body-emphasis text-decoration-none border-top" href="#">
+            <svg aria-hidden="true" class="bd-placeholder-img " height="96" preserveAspectRatio="xMidYMid slice" width="100%" xmlns="http://www.w3.org/2000/svg">
+            <rect width="100%" height="100%" fill="#777">
+            </rect>
+            </svg>
+            <div class="col-lg-8">
+            <h6 class="mb-0">Longer blog post title: This one has multiple lines!</h6>
+            <small class="text-body-secondary">January 13, 2024</small>
+            </div>
+            </a>
+            </li>
+            </ul>
+          </div>
+          <!-- Archives -->
+          <div class="p-4">
+            <h4 class="fst-italic">Archives</h4>
+            <ol class="list-unstyled mb-0">
+              <li>
+              <a href="#">March 2021</a>
+              </li>
+              <li>
+              <a href="#">February 2021</a>
+              </li>
+              <li>
+              <a href="#">January 2021</a>
+              </li>
+              <li>
+              <a href="#">December 2020</a>
+              </li>
+              <li>
+              <a href="#">November 2020</a>
+              </li>
+              <li>
+              <a href="#">October 2020</a>
+              </li>
+              <li>
+              <a href="#">September 2020</a>
+              </li>
+              <li>
+              <a href="#">August 2020</a>
+              </li>
+              <li>
+              <a href="#">July 2020</a>
+              </li>
+              <li>
+              <a href="#">June 2020</a>
+              </li>
+              <li>
+              <a href="#">May 2020</a>
+              </li>
+              <li>
+              <a href="#">April 2020</a>
+              </li>
+            </ol>
+          </div>
+          <!-- Elsewhere -->
+          <div class="p-4">
+            <h4 class="fst-italic">Elsewhere</h4>
+            <ol class="list-unstyled">
+              <li>
+              <a href="#">GitHub</a>
+              </li>
+              <li>
+              <a href="#">Social</a>
+              </li>
+              <li>
+              <a href="#">Facebook</a>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <center><hr class="w-75"></center>
+</Layout>

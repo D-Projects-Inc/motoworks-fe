@@ -1,0 +1,48 @@
+---
+const { title, headline, subheadline, hero_image } = Astro.props;
+---
+<section class="hero-section d-flex align-items-center text-white py-3" 
+  data-aos="zoom-in-down" 
+  style={`background-image: url('${hero_image.src}')`}>
+  <div class="overlay"></div>
+
+  <div class="container position-relative text-center">
+    <!--[ Copy Content ]-->
+    <h1 class="display-4 fw-bold text-uppercase hero-title">{title}</h1>
+    <div class="d-flex gap-3 justify-content-center p-3">
+      <h2 class="fw-light mb-4 w-75 px-3">{headline}</h2>
+    </div>
+    <p class="lead mb-4 hero-subtitle">{subheadline}</p>
+  </div>
+</section>
+<!-- Style -->
+<style>
+  .hero-section {
+    position: relative;
+    min-height: 50vh;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55); /* dark overlay */
+    backdrop-filter: brightness(0.6);
+  }
+
+  .hero-title {
+    letter-spacing: 1px;
+  }
+
+  .hero-subtitle {
+    opacity: 0.9;
+  }
+
+  @media (min-width: 768px) {
+    .hero-section {
+      min-height: 75vh;
+    }
+  }
+</style>

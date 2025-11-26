@@ -1,0 +1,128 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+<div class="container pt-3" data-aos="fade-up">
+  <!--[ Section Header ]-->
+  <div class="text-center mb-5">
+    <h2 class="fw-bold">Our Quick Services</h2>
+    <p class="lead">
+      Get your motorbike or generator serviced in no time with our efficient and reliable quick services.
+    </p>
+  </div>
+  <div class="row row-cols-12 row-cols-md-3 g-4">
+    <!--[ Item 1: Basic Tune-Up ]-->
+    <div class="col text-center">
+      <div class="p-4 border rounded-3 h-100">
+        <Icon name="mdi:wrench" height="40" width="40" class="mb-3 text-primary" />
+        <h5 class="fw-bold mb-2">Basic Tune-Up</h5>
+        <p class="text-secondary">
+          Keep your engine running smoothly with our comprehensive tune-up service.
+        </p>
+      </div>
+    </div>
+    <!--[ Item 2: Oil Change ]-->
+    <div class="col text-center">
+      <div class="p-4 border rounded-3 h-100">
+        <Icon name="mdi:oil-temperature" height="40" width="40" class="mb-3 text-primary" />
+        <h5 class="fw-bold mb-2">Oil Change</h5>
+        <p class="text-secondary">
+          Ensure optimal performance with our quick and efficient oil change service.
+        </p>
+      </div>
+    </div>
+    <!--[ Item 3: Tire Inspection ]-->
+    <div class="col text-center">
+      <div class="p-4 border rounded-3 h-100">
+        <Icon name="mdi:car-tire-alert" height="40" width="40" class="mb-3 text-primary" />
+        <h5 class="fw-bold mb-2">Tire Inspection</h5>
+        <p class="text-secondary">
+          Stay safe on the road with our thorough tire inspection and maintenance service.
+        </p>
+      </div>
+    </div>
+    <!--[ Item 4: Full Engine & Servicing ]-->
+    <div class="col text-center">
+      <div class="p-4 border rounded-3 h-100">
+        <Icon name="mdi:engine" height="40" width="40" class="mb-3 text-primary" />
+        <h5 class="fw-bold mb-2">Full Engine & Servicing</h5>
+        <p class="text-secondary">
+          Keep your bike running smooth with full engine and oil maintenance.
+        </p>
+      </div>
+    </div>
+    <!--[ Item 5: Electrical Repairs ]-->
+    <div class="col text-center">
+      <div class="p-4 border rounded-3 h-100">
+        <Icon name="mdi:flash" height="40" width="40" class="mb-3 text-primary" />
+        <h5 class="fw-bold mb-2">
+          Electrical Repairs
+        </h5>
+        <p class="text-secondary">
+          From lighting faults to ignition issues - We'll trace and fix it fast.
+        </p>
+      </div>
+    </div>
+    <!--[ Item 6: Custom Builds ]-->
+    <div class="col text-center">
+      <div class="p-4 border rounded-3 h-100">
+        <Icon name="mdi:wrench-cog" height="40" width="40" class="mb-3 text-primary" />
+        <h5 class="fw-bold mb-2">
+          Custom Builds
+        </h5>
+        <p class="text-secondary">
+          Need a unique setup? We fabricate, tune, and personalize.
+        </p>
+      </div>
+    </div>
+    <!--[ Item 7: Special Breakdowns & Recovery ]-->
+    <div class="col-md-12 text-center">
+      <div class="p-4 border rounded-3 h-100">
+        <Icon name="mdi:tow-truck" height="40" width="40" class="mb-3 text-primary" />
+        <h5 class="fw-bold mb-2">Breakdowns & Recovery</h5>
+        <p class="text-secondary">
+          On-site help to get you back on the road, anywhere in town.
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!--[ VAPs | #TODO: Add Content... ]-->
+  <div class="text-center my-4">
+    <!-- VAPs Title-->
+    <p class="fw-semibold mb-1 fs-6">
+      <a type="button"
+        data-bs-toggle="tooltip" 
+        data-bs-placement="top" 
+        title="Optional features or services bundled with a product or service to increase its overall value beyond the base offering"
+      >Optional Value Added Add-Ons:</a>
+    </p>
+    <!-- [ VAPs ] -->
+    <div class="text-secondary my-2 d-flex justify-content-center">
+      <!--[ VAP 1: Pick-up / Drop-off ]-->
+      <details class="mx-2">
+        <summary>Pick-up / Drop-off Service</summary>
+        Collect the bike from the customer's home or workplace, service it, and return it. This adds huge convenience.
+      </details> |
+      <!--[ VAP 2: Service Plans ]-->
+      <details class="mx-2">
+        <summary>Maintenance / Service Plans</summary>
+        reate subscription or plan-based models: e.g., pre-paid service plans, maintenance plans, or scheduled service packages.
+      </details> | 
+      <!--[ VAP 3: Detailing ]-->
+      <details class="mx-2">
+        <summary>Detailing / Cosmetic Services</summary>
+        Wash, polish, chrome restoration, anti-rust / corrosion treatment, or full valet for bikes.
+      </details> | 
+      <!--[ VAP 4: Helmet / Gear Cleaning & Care ]-->
+      <details class="mx-2">
+        <summary>Helmet / Gear Cleaning & Care</summary>
+        Offer a cleaning or minor repair service for riding gear (helmets, jackets, gloves)
+      </details> 
+    </div>
+  </div>
+
+  <!--[ CTA ]-->
+  <p class="d-flex justify-content-center">
+    <a class="btn btn-info w-50" href="/services">Learn More</a>
+  </p>
+</div>

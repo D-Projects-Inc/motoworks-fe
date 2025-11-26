@@ -1,0 +1,71 @@
+---
+import "../styles/global.css";
+import Layout from '../layouts/Layout.astro';
+import { BRAND_NAME } from '../consts';
+import AOSInit from "../components/InitAOS";
+---
+<Layout>
+  <AOSInit client:idle />
+  <!--[ 1. Hero Section ]-->
+  <section class="text-center mb-3 mt-5 py-5" data-aos="zoom-in">
+	  <div class="py-3 container-md">
+      <h1 class="display-5 text-body-emphasis"
+      ><em>The Heart Behind the Tools</em></h1>
+      <!--[ Subheadline ]-->
+      <div class="px-5">
+        <h2 class="fw-light mb-1">
+          <em>Each bike tells a story - Her's a few of our much appreciated clients' stories.</em>
+        </h2>
+      </div>
+    </div>
+  </section>
+  <center><hr class="w-75"></center>
+
+  <!--[ Team ]-->
+  <section class="py-5" id="team" style="min-height: 200px;">
+    <legend class="display-5 mb-3">
+      The Team
+    </legend>
+    <!-- #TODO: Refactor -->
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+          <!-- Technician's Photo -->
+          <div class="col-auto d-none d-lg-block">
+            <svg aria-label="Placeholder: Thumbnail" class="bd-placeholder-img " height="250" preserveAspectRatio="xMidYMid slice" role="img" width="200" xmlns="http://www.w3.org/2000/svg">
+              <title>Placeholder</title>
+              <rect width="100%" height="100%" fill="#55595c"></rect>
+              <text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text>
+            </svg>
+          </div>
+          <!--  -->
+          <div class="col p-4 d-flex flex-column position-static">
+            <strong class="d-inline-block mb-2 text-primary-emphasis">
+              Technician
+            </strong>
+            <h3 class="mb-0">Thabo
+              <span class="small text-muted" style="font-size: small;">(Thibo-Touch)</span>
+            </h3>
+            <!-- #TODO: Refactor. Timeline / Stats -->
+            <div class="mb-1 text-body-secondary">500+ bikes serviced</div>
+            <!--[ Story & values ]-->
+            <p class="card-text mb-auto">
+              Hi, I'm Thabo, a lifelong motorcycle enthusiast and certified mechanic. I started 
+              MotoFix to bring honest, high-quality service to local riders. Every job is done as 
+              if it were my own bike.
+            </p>
+            <a href="#" class="icon-link gap-1 icon-link-hover stretched-link">
+              Continue reading
+              <svg class="bi" aria-hidden="true">
+                <use xlink:href="#chevron-right"></use>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </section>
+  <center><hr class="w-75"></center>
+
+</Layout>
