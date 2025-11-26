@@ -1,0 +1,33 @@
+---
+import "../styles/global.css";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import ThemeToggler from "../components/ThemeToggler.astro";
+---
+<!doctype html>
+<html lang="en" data-bs-theme="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+    <meta name="description" content={SITE_DESCRIPTION} />
+		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#712cf9">
+		<link rel="icon" type="image/svg+xml" href="/myfavicon.png" />
+		<title>{SITE_TITLE}</title>
+		<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	</head>
+	<body>
+		<Header />
+		<ThemeToggler />
+		<main class="container-fluid px-4 px-md-5">
+			<slot />
+		</main>
+		<Footer />
+		<script is:inline src="/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js">
+		</script>
+		<script is:inline src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" 
+			integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D" crossorigin="anonymous" async>
+		</script>
+	</body>
+</html>

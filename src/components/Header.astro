@@ -1,0 +1,101 @@
+---
+import faviconImage from "/public/SyMotoWorks.png";
+import { Icon } from 'astro-icon/components'
+import { BRAND_NAME } from "../consts";
+import { Image } from "astro:assets"; 
+import "../styles/global.css";
+
+const currentPath = Astro.url.pathname;
+---
+<!-- Header Component-->
+<div class="container-fluid px-4 px-md-5">
+  <header class="d-flex flex-wrap align-items-center justify-content-between py-3 border-bottom">
+    <!--[ Logo ]-->
+    <div class="col-md-3 mb-2 mb-md-0 d-flex align-items-center">
+      <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
+        <Image src={faviconImage} fetchpriority="high" loading={"eager"} aria-hidden="true"
+          alt="favicon" class="bi me-2 rounded-circle" style="height: 30px;width:30px;" />
+        <span class="fs-4">{BRAND_NAME}</span>
+      </a>
+    </div>
+    <!--[ Mobile Nav Toggler ]-->
+    <button class="navbar-toggler d-md-none border-0"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#mainNav"
+      aria-controls="mainNav" 
+      aria-expanded="false"
+      aria-label="Toggle navigation" 
+      data-aos="zoom-in-up" 
+      data-aos-delay="300"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <!--[ Nav links (collapsible on mobile) ]-->
+    <div class="collapse d-md-flex col-12 col-md-auto justify-content-center" id="mainNav">
+      <ul class="nav mb-2 justify-content-center mb-md-0">
+        <!--[ Home ]-->
+        <li>
+          <a href="/" 
+            class={`nav-link px-2 ${currentPath === "/" ? "link-secondary" : "link-body-emphasis"}`}
+            data-aos="zoom-in-down" 
+            data-aos-delay="50"
+          >Home</a>
+        </li>
+        <!--[ Services ]-->
+        <li>
+          <a href="/services"
+            data-aos="zoom-in-up" 
+            data-aos-delay="50"
+            class={`nav-link px-2 ${currentPath.startsWith("/services") ? "link-secondary" : "link-body-emphasis"}`}
+          >Services</a>
+        </li>
+        <!--[ Gallery ]-->
+        <li>
+          <a href="/gallery"
+            class={`nav-link px-2 ${currentPath.startsWith("/gallery") ? "link-secondary" : "link-body-emphasis"}`}
+            data-aos="flip-left" 
+            data-aos-delay="50"
+          >Gallery</a>
+        </li>
+        <!--[ About ]-->
+        <li>
+          <a href="/about"
+            class={`nav-link px-2 ${currentPath.startsWith("/about") ? "link-secondary" : "link-body-emphasis"}`} 
+            data-aos="flip-right" 
+            data-aos-delay="50"
+          >About</a>
+        </li>
+        <!--[ Contact ]-->
+        <li>
+          <a href="/contact"
+            class={`nav-link px-2 ${currentPath.startsWith("/contact") ? "link-secondary" : "link-body-emphasis"}`} 
+            data-aos="fade-left" 
+            data-aos-delay="50"
+          >Contact</a>
+        </li>
+      </ul>
+    </div>
+    <!--[ CTAs ]-->
+    <div class="col-md-3 col-12 text-end">
+      <a href="/booking" class="btn btn-sm btn-outline-primary me-2" 
+        data-aos="zoom-in-up" 
+        data-aos-delay="300"
+      >Book Now</a>
+      <a href="https://wa.me/1234567890" 
+        class="btn btn-sm btn-outline-success" 
+        data-aos="zoom-in-down" 
+        data-aos-delay="300"
+      >
+        <Icon name="mdi:whatsapp" 
+          height="17" 
+          width="17" 
+          class="text-success" 
+          style="margin-bottom: 2px;" 
+        />
+        <span class="d-md-none">WhatsApp Us</span>
+      </a>
+    </div>
+  </header>
+</div>
+<!-- End Navbar -->

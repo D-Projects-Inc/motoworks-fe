@@ -1,0 +1,27 @@
+{
+  "name": "reception",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/mdx": "^4.3.7",
+    "@astrojs/netlify": "^6.6.2",
+    "@astrojs/preact": "^4.0.6",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.6.0",
+    "@iconify-json/mdi": "^1.2.3",
+    "@iconify-json/ph": "^1.2.2",
+    "@tailwindcss/vite": "^4.0.15",
+    "aos": "^2.3.4",
+    "astro": "^5.14.6",
+    "astro-icon": "^1.1.5",
+    "bootstrap": "^5.3.8",
+    "preact": "^10.27.2",
+    "sharp": "^0.34.3"
+  }
+}

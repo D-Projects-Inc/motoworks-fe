@@ -1,0 +1,27 @@
+---
+import Layout from "../layouts/Layout.astro";
+import AOSInit from "../components/InitAOS";
+import HERO_IMAGE from "../assets/images/JMB/workshop_sketch.png";
+// Components
+import NoCTAHeroSection from "../components/heros/NoCTAHeroSection.astro";
+import BookServiceFormCard from "../components/forms/BookServiceFormCard.astro";
+---
+<Layout>
+  <AOSInit client:idle />
+  <!--[ Hero ]-->
+  <NoCTAHeroSection
+    title="Book Your Service Appointment"
+    headline="Schedule your motorcycle service with ease and confidence."
+    subheadline="Choose your preferred date and time, and let our expert technicians take care of the rest."
+    hero_image={HERO_IMAGE}
+  />
+  <center><hr class="my-4 w-50"></center>
+  <!--[ Booking Form ]-->
+  <section class="py-3" data-aos="fade-up" data-aos-delay="100">
+    <div class="row d-flex justify-content-center">
+      <div class="col-12">
+        <BookServiceFormCard />
+      </div>
+    </div>
+  </section>
+</Layout>
