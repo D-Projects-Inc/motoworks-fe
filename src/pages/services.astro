@@ -2,13 +2,13 @@
 import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
 import { Icon } from 'astro-icon/components';
-import { BRAND_NAME } from '../consts';
+import { BRAND_NAME, BASE_BACKEND_URL } from '../consts';
 
 // Components
 import AOSInit from "../components/InitAOS";
 import ServiceCard from "../components/cards/ServiceCard.astro";
 import ServiceOfferCard from "../components/ServiceOfferCard.astro";
-// Services Data
+// Placeholder Services Data
 const services = [
   // MOTORCYCLES
   {
@@ -143,6 +143,10 @@ const services = [
 //   description: "We track your service intervals and send reminders so your machine always stays in top condition.",
 // },
 ];
+
+// Actual Offered Services Data
+
+const offeredServices = await fetch(BASE_BACKEND_URL+"services/")
 ---
 <Layout>
   <AOSInit client:idle />

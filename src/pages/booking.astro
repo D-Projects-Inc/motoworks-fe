@@ -5,6 +5,7 @@ import HERO_IMAGE from "../assets/images/JMB/workshop_sketch.png";
 // Components
 import NoCTAHeroSection from "../components/heros/NoCTAHeroSection.astro";
 import BookServiceFormCard from "../components/forms/BookServiceFormCard.astro";
+import HelloWorld from "../components/cards/HelloComponent";
 ---
 <Layout>
   <AOSInit client:idle />
@@ -21,6 +22,7 @@ import BookServiceFormCard from "../components/forms/BookServiceFormCard.astro";
     <div class="row d-flex justify-content-center">
       <div class="col-12">
         <BookServiceFormCard />
+        <HelloWorld client:load />
       </div>
     </div>
   </section>

@@ -1,3 +1,4 @@
+export const BASE_BACKEND_URL = "http://127.0.0.1:8000/api/";
 export const BRAND_NAME = "MotoWorks";
 export const SITE_TITLE = "MotoWorks";
 export const SITE_DESCRIPTION = `MotoWorks eReception - A modern digital solution for motorcycle and 
