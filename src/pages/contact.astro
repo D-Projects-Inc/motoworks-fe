@@ -1,5 +1,6 @@
 ---
 import "../styles/global.css";
+import {BASE_BACKEND_URL} from "../consts";
 import Layout from '../layouts/Layout.astro';
 import AOSInit from "../components/InitAOS";
 import ContactUsForm from "../components/forms/ContactFormCard.astro";
@@ -78,9 +79,9 @@ import ContactUsForm from "../components/forms/ContactFormCard.astro";
   </section>
   <center><hr class="w-75"></center>
   <!--[ 3. Contact Form ]-->
-  <section class="container py-5 ">
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-11" data-aos="fade-up">
+  <section class="container-md py-5 ">
+    <div class="d-flex justify-content-center">
+      <div class="" data-aos="fade-up">
         <ContactUsForm />
         <div id="formMessage" class="mt-4 text-center text-lg font-semibold hidden"></div>
       </div>
@@ -100,7 +101,7 @@ import ContactUsForm from "../components/forms/ContactFormCard.astro";
 
     // Send form data to Django backend
     try {
-      const res = await fetch("http://127.0.0.1:8000/api/contact/", {
+      const res = await fetch({BASE_BACKEND_URL}+"contact/", {
         method: 'POST',
         body: formData,
       });

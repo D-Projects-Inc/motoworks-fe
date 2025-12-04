@@ -1,6 +1,4 @@
-# motoworks-fe
-MotoWorks Frontend
-# Plumber's eReception
+# MotoWorks Frontend
 
 ## Contents
 
