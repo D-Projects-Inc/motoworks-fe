@@ -8,12 +8,10 @@ import netlify from '@astrojs/netlify';
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://khanyej.netlify.app/",
-
+  site: "https://ejahman.netlify.app/",
   integrations: [
       icon(),
       sitemap(), preact()
 	],
-
   adapter: netlify(),
 });
