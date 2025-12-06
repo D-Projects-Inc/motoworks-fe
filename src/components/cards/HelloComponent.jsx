@@ -3,22 +3,22 @@ import { useEffect, useState } from "preact/hooks";
 
 export default function HelloWorld() {
   const [message, setMessage] = useState('');
-  useEffect(() => {
+  // useEffect(() => {
   
-    async function fetchData () {
-      let data = await fetch("http://127.0.0.1:8000/hi/", {method: 'GET'});
-      let jsonData = await data.json();
-      return jsonData; 
-    }
+  //   async function fetchData () {
+  //     let data = await fetch("http://127.0.0.1:8000/hi/", {method: 'GET'});
+  //     let jsonData = await data.json();
+  //     return jsonData; 
+  //   }
 
-    fetchData().then(data => {
-      const mesg =  data.message;
-      setMessage(mesg);
-    })
-    .catch(error => {
-    console.log(error);
-    });
-  },[]);
+  //   fetchData().then(data => {
+  //     const mesg =  data.message;
+  //     setMessage(mesg);
+  //   })
+  //   .catch(error => {
+  //   console.log(error);
+  //   });
+  // },[]);
 
   return (
     <div class="text-center p-5">
