@@ -1,10 +1,10 @@
 ---
 import "../styles/global.css";
-import {BASE_BACKEND_URL} from "../consts";
 import Layout from '../layouts/Layout.astro';
 import AOSInit from "../components/InitAOS";
 import ContactUsForm from "../components/forms/ContactFormCard.astro";
 ---
+
 <Layout>
   <AOSInit client:idle />
   <!--[ 1. Hero Section ]-->
@@ -89,38 +89,5 @@ import ContactUsForm from "../components/forms/ContactFormCard.astro";
   </section>
   <center><hr class="w-75"></center>
 </Layout>
-<!-- 
-<script is:inline type="module">
-  const form = document.getElementById('contactForm');
-  const messageBox = document.getElementById('formMessage');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault(); // prevent normal form submit
-
-    const formData = new FormData(form);
-
-    // Send form data to Django backend
-    try {
-      const res = await fetch({BASE_BACKEND_URL}+"contact/", {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (!res.ok) throw new Error('Network response was not ok');
-
-      // Show success message
-      messageBox.style.display = 'block';
-      messageBox.style.color = 'green';
-      messageBox.textContent = "Thanks! Your message has been sent. We'll get back to you soon.";
-
-      form.reset(); // clear the form
-
-    } catch (err) {
-      // Show error
-      messageBox.style.display = 'block';
-      messageBox.style.color = 'red';
-      messageBox.textContent = "Oops! Something went wrong. Please try again.";
-      console.error(err);
-    }
-  });
-</script> -->
+<script type="module" is:inline src="/src/scripts/contact.js"></script>
