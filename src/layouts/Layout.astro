@@ -4,21 +4,24 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../consts";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import ThemeToggler from "../components/ThemeToggler.astro";
+
+// Get Workshop Data.
+const workshop = await fetch(import.meta.env.PUBLIC_API_URL + '/accounts/workshops/1/')
+  .then(r => r.json());
 ---
 <!doctype html>
 <html lang="en" data-bs-theme="dark">
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
-    <meta name="description" content={SITE_DESCRIPTION} />
+    <meta name="description" content={workshop.about || SITE_DESCRIPTION} />
 		<meta name="generator" content={Astro.generator} />
 		<meta name="theme-color" content="#712cf9">
 		<link rel="icon" type="image/svg+xml" href="/myfavicon.png" />
-		<title>{SITE_TITLE}</title>
-		<link href="/node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+		<title>{workshop.name ||SITE_TITLE}</title>
 	</head>
 	<body>
-		<Header />
+		<Header workshop={workshop} />
 		<ThemeToggler />
 		<main class="container-fluid px-4 px-md-5">
 			<slot />

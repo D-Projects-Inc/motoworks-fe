@@ -6,7 +6,13 @@ import { Image } from "astro:assets";
 import "../styles/global.css";
 
 const currentPath = Astro.url.pathname;
+
+// Props
+import type { WorkshopProps } from "../types/components.d.ts";
+
+const { workshop } = Astro.props as WorkshopProps;
 ---
+
 <!-- Header Component-->
 <div class="container-fluid px-4 px-md-5">
   <header class="d-flex flex-wrap align-items-center justify-content-between py-3 border-bottom">
@@ -15,7 +21,7 @@ const currentPath = Astro.url.pathname;
       <a href="/" class="d-flex align-items-center link-body-emphasis text-decoration-none">
         <Image src={faviconImage} fetchpriority="high" loading={"eager"} aria-hidden="true"
           alt="favicon" class="bi me-2 rounded-circle" style="height: 30px;width:30px;" />
-        <span class="fs-4">{BRAND_NAME}</span>
+        <span class="fs-5">{workshop.name||BRAND_NAME}</span>
       </a>
     </div>
     <!--[ Mobile Nav Toggler ]-->

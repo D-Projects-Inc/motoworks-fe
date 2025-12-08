@@ -10,6 +10,7 @@ import GalleryTeaser from "../components/GalleryTeaser.astro";
 import HeroSection from "../components/HomeHeroSection.astro"
 import ServicesPreview from '../components/ServicesPreview.astro';
 ---
+
 <Layout>
   <AOSInit client:idle />
   <!--[ 1. Hero Section ]-->
@@ -31,3 +32,8 @@ import ServicesPreview from '../components/ServicesPreview.astro';
   <!--[ 5. Contact Banner ]-->
   <ContactBanner />
 </Layout>
+
+<script>
+  const workshops = await fetch(import.meta.env.PUBLIC_API_URL + '/accounts/workshops/').then(r => r.json());
+  console.log(`Workshops: ${JSON.stringify(workshops)}`);
+</script>
