@@ -6,7 +6,7 @@ import Header from "../components/Header.astro";
 import ThemeToggler from "../components/ThemeToggler.astro";
 
 // Get Workshop Data.
-const workshop = await fetch(import.meta.env.PUBLIC_API_URL + '/accounts/workshops/1/')
+const workshop = await fetch(import.meta.env.PUBLIC_API_URL + '/workshops/1/')
   .then(r => r.json());
 ---
 <!doctype html>
